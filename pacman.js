@@ -1,7 +1,6 @@
 /*jshint esversion: 6 */
 
 class Pacman {
-
     place(x, y, f) {
         this.x = x;
         this.y = y;
@@ -10,7 +9,23 @@ class Pacman {
     }
 
     move() {
-        console.log('move');
+        switch(this.f) {
+            case 'NORTH':
+                this.x++;
+                break;
+
+            case 'SOUTH':
+                this.x--;
+                break;
+
+            case 'EAST':
+                this.y++;
+                break;
+
+            case 'WEST':
+                this.y--;
+                break;
+        }
     }
 
     left() {
