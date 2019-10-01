@@ -1,35 +1,64 @@
 /*jshint esversion: 6 */
+const mazeHeight = 5;
+const mazeWidth = 5;
+
+const edgesMessage = `
+You are about to go off the map. Turn around.
+`;
 
 class Pacman {
     place(x, y, f) {
-        this.x = x;
-        this.y = y;
-        this.f = f;
-        console.log(`Placed on ${x},${y}, facing ${f}.`);
-    }
-
-    move() {
-        switch(this.f) {
-            case 'NORTH':
-                this.x++;
-                break;
-
-            case 'SOUTH':
-                this.x--;
-                break;
-
-            case 'EAST':
-                this.y++;
-                break;
-
-            case 'WEST':
-                this.y--;
-                break;
+        if (x > mazeWidth || x < 1 || y > mazeHeight || y < 1) {
+            console.log('Pacman is out of the maze, resetting to: 1,1,NORTH');
+            this.x = 1;
+            this.y = 1;
+            this.f = 'NORTH';
+        } else {
+            this.x = x;
+            this.y = y;
+            this.f = f;
         }
     }
 
+    move() {
+        switch (this.x, this.y, this.f) {
+            case 'NORTH':
+                if (this.x < mazeHeight) {
+                    this.x++;
+                } else {
+                    console.log(edgesMessage);
+                }
+                break;
+
+            case 'SOUTH':
+                if (this.x > 1) {
+                    this.x--;
+                } else {
+                    console.log(edgesMessage);
+                }
+                break;
+
+            case 'EAST':
+                if (this.y < mazeWidth) {
+                    this.y++;
+                } else {
+                    console.log(edgesMessage);
+                }
+                break;
+
+            case 'WEST':
+                if (this.y > 1) {
+                    this.y--;
+                } else {
+                    console.log(edgesMessage);
+                }
+                break;
+        }
+        return true;
+    }
+
     left() {
-        switch(this.f) {
+        switch (this.f) {
             case 'NORTH':
                 this.f = 'WEST';
                 break;
@@ -49,7 +78,7 @@ class Pacman {
     }
 
     right() {
-        switch(this.f) {
+        switch (this.f) {
             case 'NORTH':
                 this.f = 'EAST';
                 break;
@@ -68,7 +97,7 @@ class Pacman {
         }
     }
 
-    report(x, y, f) {
+    report() {
         console.log(`Output: ${this.x},${this.y},${this.f}`);
     }
 }
