@@ -2,8 +2,9 @@
 const mazeHeight = 5;
 const mazeWidth = 5;
 
-const edgesMessage = `
-You are about to go off the map. Turn around.
+const edgesMessage = `\x1b[31m
+I can't do that, I am about to go off the map!
+\x1b[36m\Try turning:\x1b[32m LEFT\x1b[0m or\x1b[32m RIGHT\x1b[0m.\x1b[0m
 `;
 
 class Pacman {
@@ -98,7 +99,7 @@ class Pacman {
     }
 
     report() {
-        console.log(`Output: ${this.x},${this.y},${this.f}`);
+        console.log(`\x1b[4m\x1b[34mOutput: ${this.x},${this.y},${this.f}\x1b[0m`);
     }
 }
 

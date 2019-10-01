@@ -7,6 +7,30 @@ let x;
 let y;
 let f;
 
+const introText = `\x1b[2mExamples:
+
+Input:\x1b[1m\x1b[0m
+PLACE 1,1,NORTH
+MOVE
+REPORT\x1b[2m
+Output: 2,1,NORTH
+
+Input:\x1b[1m\x1b[0m
+PLACE 1,1,NORTH
+LEFT
+REPORT\x1b[2m
+Output: 1,1,WEST
+
+Input:\x1b[1m\x1b[0m
+PLACE 1,2,EAST
+MOVE
+MOVE
+LEFT
+MOVE
+REPORT\x1b[2m
+Output: 2,4,NORTH\x1b[0m
+`;
+
 const infoText = `\x1b[36m\
 Valid commands are:
 \x1b[32m
@@ -14,18 +38,24 @@ PLACE X,Y,F
 MOVE
 LEFT
 RIGHT
-REPORT
+REPORT\x1b[0m
 `;
 
 const invalidMessage = `\x1b[31m
-Please input a valid command.
+···ᗣ·······ᗧ······•··········ᗣ··· 
+· Please input a valid command. ·
+······ᗣ····•·······ᗤ············· 
+\x1b[0m
 `;
 
 // Return value from interactive console
 // https://stackoverflow.com/questions/8128578/reading-value-from-console-interactively
 let stdin = process.openStdin();
 
+// Remove existing text and render just pacman info
+process.stdout.write('\033c');
 console.log(infoText);
+console.log(introText);
 
 stdin.addListener('data', d => {
     'use strict';

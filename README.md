@@ -2,6 +2,10 @@
 
 Code problem details:
 
+```
+npm start
+```
+
 -----------
 
 Pacman Simulator
@@ -86,7 +90,6 @@ Output: 3,3,NORTH
 - *It is not required to provide any graphical output* showing the movement of Pacman.
 - The output of the efforts *must be committed back into a Public Repo in Github* and the URL shared back for review.
 - Proving your code works via unit testing is highly encouraged
-
 
 
 
