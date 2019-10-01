@@ -3,9 +3,9 @@
 const Pacman = require('./pacman.js');
 let pacman = new Pacman();
 
-let x = '';
-let y = '';
-let f = '';
+let x;
+let y;
+let f;
 
 const infoText = `\x1b[36m\
 Valid commands are:
@@ -40,14 +40,18 @@ let handleInput = (input) => {
     'use strict';
     // Get input values split (for PLACE)
     let splitInput = input.split(' ');
-    // Get place in own var
+
+    // Get PLACE in own var
     input = splitInput[0];
+
+    // GET input params
     let inputParams = splitInput[1];
 
-    // Get other split params into own var
+    // Get input params into own var
     if (inputParams) {
-        inputParams.split(',');
-        let paramsArray = new Array();
+
+        // Put params into array
+        let paramsArray = [];
         paramsArray = inputParams.split(',');
         x = paramsArray[0];
         y = paramsArray[1];
