@@ -44,7 +44,14 @@ let handleInput = (input) => {
 
     if (inputParams) {
         inputParams.split(',');
-        console.log(inputParams);
+        let paramsArray = new Array();
+        paramsArray = inputParams.split(',');
+
+        // console.log(inputParams[0]);
+        // console.log(inputParams[1]);
+        // console.log(inputParams[2]);
+
+        console.log(paramsArray);
     }
 
     switch (input) {
