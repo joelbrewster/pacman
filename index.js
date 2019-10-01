@@ -3,6 +3,10 @@
 const Pacman = require('./pacman.js');
 let pacman = new Pacman();
 
+let x = '';
+let y = '';
+let f = '';
+
 const infoText = `\x1b[36m\
 Valid commands are:
 \x1b[32m
@@ -34,27 +38,25 @@ stdin.addListener('data', d => {
 
 let handleInput = (input) => {
     'use strict';
-    // TODO: Get PLACE input values split
+    // Get input values split (for PLACE)
     let splitInput = input.split(' ');
-    // TODO: Get place in own var
+    // Get place in own var
     input = splitInput[0];
     let inputParams = splitInput[1];
-    // TODO: Get other split params into own var
-    // inputParams ? inputParams.split(',')  : console.log("doesn't exist");
 
+    // Get other split params into own var
     if (inputParams) {
         inputParams.split(',');
         let paramsArray = new Array();
         paramsArray = inputParams.split(',');
-
-        console.log(paramsArray[0]);
-        console.log(paramsArray[1]);
-        console.log(paramsArray[2]);
+        x = paramsArray[0];
+        y = paramsArray[1];
+        f = paramsArray[2];
     }
 
     switch (input) {
         case 'PLACE':
-            pacman.place();
+            pacman.place(x, y, f);
             break;
 
         case 'MOVE':
@@ -70,7 +72,7 @@ let handleInput = (input) => {
             break;
 
         case 'REPORT':
-            pacman.report();
+            pacman.report(x, y, f);
             break;
 
         default:

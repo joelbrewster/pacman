@@ -2,8 +2,8 @@
 
 class Pacman {
 
-    place() {
-        console.log('place');
+    place(x, y, f) {
+        console.log(`Placed on ${x},${y}, facing ${f}.`);
     }
 
     move() {
@@ -18,8 +18,8 @@ class Pacman {
         console.log('right');
     }
 
-    report() {
-        console.log('report');
+    report(x, y, f) {
+        console.log(`Output: ${x},${y},${f}`);
     }
 }
 
