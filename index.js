@@ -64,15 +64,15 @@ let handleInput = (input) => {
             break;
 
         case 'MOVE':
-            pacman.move();
+            pacman.move(x, y, f);
             break;
 
         case 'LEFT':
-            pacman.left();
+            pacman.left(f);
             break;
 
         case 'RIGHT':
-            pacman.right();
+            pacman.right(f);
             break;
 
         case 'REPORT':
