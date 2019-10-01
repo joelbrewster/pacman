@@ -34,13 +34,18 @@ stdin.addListener('data', d => {
 
 let handleInput = (input) => {
     'use strict';
+    // TODO: Get PLACE input values split
+    let splitInput = input.split(' ');
+    // TODO: Get place in own var
+    let firstWord = splitInput[0];
+    // TODO: Get other split params into own var
+    splitInput[1] ? console.log("extra params") : console.log("no extra params");
+
+    // console.log(firstWord);
 
     switch (input) {
 
         case 'PLACE':
-            // TODO: Get PLACE input values split
-            // TODO: Get place in own var
-            // TODO: Get other split params into own var
             pacman.place();
             break;
 
