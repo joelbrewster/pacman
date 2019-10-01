@@ -1,5 +1,8 @@
 /*jshint esversion: 6 */
 
+const Pacman = require('./pacman.js');
+let pacman = new Pacman();
+
 const infoText = `\x1b[36m\
 Valid commands are:
 \x1b[32m
@@ -16,7 +19,7 @@ Please input a valid command.
 
 // Return value from interactive console
 // https://stackoverflow.com/questions/8128578/reading-value-from-console-interactively
-var stdin = process.openStdin();
+let stdin = process.openStdin();
 
 console.log(infoText);
 
@@ -38,23 +41,23 @@ let handleInput = (input) => {
             // TODO: Get PLACE input values split
             // TODO: Get place in own var
             // TODO: Get other split params into own var
-            console.log('place');
+            pacman.place();
             break;
 
         case 'MOVE':
-            console.log('move');
+            pacman.move();
             break;
 
         case 'LEFT':
-            console.log('left');
+            pacman.left();
             break;
 
         case 'RIGHT':
-            console.log('right');
+            pacman.right();
             break;
 
         case 'REPORT':
-            console.log('report');
+            pacman.report();
             break;
 
         default:
