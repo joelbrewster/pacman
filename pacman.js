@@ -35,15 +35,15 @@ class Pacman {
                 if (this.y > 0) {
                     this.y--;
                 } else {
-                    console.log(edgesMessage-1);
+                    console.log(edgesMessage);
                 }
                 break;
 
             case 'EAST':
-                if (this.x < mazeWidth) {
+                if (this.x < mazeWidth-1) {
                     this.x++;
                 } else {
-                    console.log(edgesMessage-1);
+                    console.log(edgesMessage);
                 }
                 break;
 
@@ -51,7 +51,7 @@ class Pacman {
                 if (this.x > 0) {
                     this.x--;
                 } else {
-                    console.log(edgesMessage-1);
+                    console.log(edgesMessage);
                 }
                 break;
         }
