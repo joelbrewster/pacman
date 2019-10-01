@@ -37,14 +37,17 @@ let handleInput = (input) => {
     // TODO: Get PLACE input values split
     let splitInput = input.split(' ');
     // TODO: Get place in own var
-    let firstWord = splitInput[0];
+    input = splitInput[0];
+    let inputParams = splitInput[1];
     // TODO: Get other split params into own var
-    splitInput[1] ? console.log("extra params") : console.log("no extra params");
+    // inputParams ? inputParams.split(',')  : console.log("doesn't exist");
 
-    // console.log(firstWord);
+    if (inputParams) {
+        inputParams.split(',');
+        console.log(inputParams);
+    }
 
     switch (input) {
-
         case 'PLACE':
             pacman.place();
             break;
