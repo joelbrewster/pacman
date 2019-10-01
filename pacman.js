@@ -9,8 +9,8 @@ I can't do that, I am about to go off the map!
 
 class Pacman {
     place(x, y, f) {
-        if (x > mazeWidth || x < 1 || y > mazeHeight || y < 1) {
-            console.log('Pacman is out of the maze, resetting to: 1,1,NORTH');
+        if (x >= mazeWidth || x < 0 || y >= mazeHeight || y < 0) {
+            console.log('Pacman is out of the maze, resetting to: 0,0,NORTH');
             this.x = 1;
             this.y = 1;
             this.f = 'NORTH';
@@ -24,34 +24,34 @@ class Pacman {
     move() {
         switch (this.x, this.y, this.f) {
             case 'NORTH':
-                if (this.x < mazeHeight) {
-                    this.x++;
-                } else {
-                    console.log(edgesMessage);
-                }
-                break;
-
-            case 'SOUTH':
-                if (this.x > 1) {
-                    this.x--;
-                } else {
-                    console.log(edgesMessage);
-                }
-                break;
-
-            case 'EAST':
-                if (this.y < mazeWidth) {
+                if (this.y < mazeHeight-1) {
                     this.y++;
                 } else {
                     console.log(edgesMessage);
                 }
                 break;
 
-            case 'WEST':
-                if (this.y > 1) {
+            case 'SOUTH':
+                if (this.y > 0) {
                     this.y--;
                 } else {
-                    console.log(edgesMessage);
+                    console.log(edgesMessage-1);
+                }
+                break;
+
+            case 'EAST':
+                if (this.x < mazeWidth) {
+                    this.x++;
+                } else {
+                    console.log(edgesMessage-1);
+                }
+                break;
+
+            case 'WEST':
+                if (this.x > 0) {
+                    this.x--;
+                } else {
+                    console.log(edgesMessage-1);
                 }
                 break;
         }

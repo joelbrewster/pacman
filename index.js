@@ -10,16 +10,16 @@ let f;
 const introText = `\x1b[2mExamples:
 
 Input:\x1b[1m\x1b[0m
-PLACE 1,1,NORTH
+PLACE 0,0,NORTH
 MOVE
 REPORT\x1b[2m
-Output: 2,1,NORTH
+Output: 0,1,NORTH
 
 Input:\x1b[1m\x1b[0m
-PLACE 1,1,NORTH
+PLACE 0,0,NORTH
 LEFT
 REPORT\x1b[2m
-Output: 1,1,WEST
+Output: 0,0,WEST
 
 Input:\x1b[1m\x1b[0m
 PLACE 1,2,EAST
@@ -28,7 +28,7 @@ MOVE
 LEFT
 MOVE
 REPORT\x1b[2m
-Output: 2,4,NORTH\x1b[0m
+Output: 3,3,NORTH\x1b[0m
 `;
 
 const infoText = `\x1b[36m\
