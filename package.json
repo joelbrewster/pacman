@@ -1,0 +1,25 @@
+{
+    "name": "pacman",
+    "version": "0.0.1",
+    "description": "Coding test example project",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/joelbrewster/pacman.git"
+    },
+    "keywords": [
+        "pacman",
+        "coding",
+        "test"
+    ],
+    "author": "Joel Brewster",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/joelbrewster/pacman/issues"
+    },
+    "homepage": "https://github.com/joelbrewster/pacman#readme"
+}
