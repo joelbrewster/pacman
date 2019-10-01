@@ -35,6 +35,9 @@ let handleInput = (input) => {
     switch (input) {
 
         case 'PLACE':
+            // TODO: Get PLACE input values split
+            // TODO: Get place in own var
+            // TODO: Get other split params into own var
             console.log('place');
             break;
 
